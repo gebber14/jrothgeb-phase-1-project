@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="index.css"/>
+    <title>Jason Rothgeb's Phase 1 Project</title>
+    <script src="/assets/jquery.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <img alt="Rothgeb cover photo" src="https://media-exp1.licdn.com/dms/image/C5603AQHTjO7JQbOYKA/profile-displayphoto-shrink_400_400/0/1517471326599?e=1655337600&v=beta&t=BmgE0DhGIn8KNTNcG81BxRnpdVxuwW08D4s25ilGGog">
+    <h2>Hi! I'm Jason, and I'm training to be a software developer.  Say hello!</h2>
+    <input type="email" placeholder="Your email">
+    <input type="submit">
+    
+    <script src="script.js"></script>
+    <h3>Please note:  I am aware that my website is a bit off stylistically.  
+      This is my first website, I'm learning, so give me some grace:)</h3>
+    <div>
+      <form action="/action_page.php">
+      <p>Please tell me your thoughts on this website:</p>
+        
+        <label for="masterpiece">
+          <input type="radio" id="masterpiece" name="webThoughts" value="masterpiece" onclick="ShowHideDiv()"/>
+          This is a masterpiece.  Truly the pinnacle of web design.
+        </label><br>
+        
+        <label for="meh">
+          <input type="radio" id="meh" name="webThoughts" value="meh" onclick="ShowHideDiv()"/>
+          It's ok, but I get you are learning, so keep at it!
+        </label><br>
+
+        
+        <label for="blah">
+          <input type="radio" id="blah" name="webThoughts" value="blah" onclick="ShowHideDiv()"/>
+          This is abhorrent.  I weep for your future.
+        </label><br>
+    </div>
+  </body>
+</html>
+
+
