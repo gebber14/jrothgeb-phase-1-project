@@ -1,4 +1,6 @@
-const { mainModule } = require("process");
+//const { mainModule } = require("process");
+const allJokes = [];
+const { link } = require("fs");
 
 const h2 = document.createElement("h2");
 h2.textContent = "This content added by JavaScript";
@@ -19,7 +21,8 @@ const introSign = () => {
     if (isOkWithJoke) {
         main();
     } else {
-        const app = document.getElementById("app");
+        const noToJokes = document.getElementById("noJokes");
+        noToJokes.innerHTML = "I understand.  Thanks for visiting!";
     }
 }
 
@@ -42,3 +45,16 @@ function myFunction() {
       }
     }
   }
+const getChuckJoke = () => {
+  return fetch('https://api.chucknorris.io/jokes/random')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+  .then(jokes => {
+    allJokes.push(...jokes)
+    jokes.map(s => {
+        const li = document.createElement('li')
+        li.innerHTML = s.name 
+        allJokes.appendChild(li)
+    })
+  })
+}
