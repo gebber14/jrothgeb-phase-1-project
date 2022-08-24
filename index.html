@@ -3,14 +3,14 @@
   <head>
     <link rel="stylesheet" href="index.css"/>
     <title>Jason Rothgeb's Phase 1 Project</title>
-    <script src="index.js"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-
+    
   </head>
   <body>
-    <div> id = "noJokes"</div>
+    
     <h1>Hello World!</h1>
     <img alt="Rothgeb cover photo" src="https://media-exp1.licdn.com/dms/image/C5603AQHTjO7JQbOYKA/profile-displayphoto-shrink_400_400/0/1517471326599?e=1655337600&v=beta&t=BmgE0DhGIn8KNTNcG81BxRnpdVxuwW08D4s25ilGGog">
     <div class="dropdown">
@@ -25,8 +25,13 @@
     <input type="email" placeholder="Your email">
     <input type="submit">
     
-    
-    <script src="index.js"></script>
+    <button
+        id = "jokeButton" onclick="getChuckJoke()">Click me for Joke
+    </button>
+   <!-- <ul id="list">
+
+   </ul> -->
+   <div id="noJokes"></div>
     <h3>Please note:  I am aware that my website is a bit off stylistically.  
       This is my first website, I'm learning, so give me some grace:)</h3>
     <div>
@@ -49,6 +54,7 @@
           This is abhorrent.  I weep for your future.
         </label><br>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
 

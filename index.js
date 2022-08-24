@@ -1,11 +1,11 @@
 //const { mainModule } = require("process");
 const allJokes = [];
-const { link } = require("fs");
-
+//const { link } = require("fs");
+const h3 = document.createElement('h3');
 const h2 = document.createElement("h2");
 h2.textContent = "This content added by JavaScript";
-document.querySelector("body").appendChild(h2);
-
+/*document.querySelector("body").appendChild(h2);
+*/
 function ShowHideDiv() {
     if(document.getElementById("masterpiece").checked) {
         dispatchEvent.display("Booo!")
@@ -45,16 +45,25 @@ function myFunction() {
       }
     }
   }
+
+//This is to retrieve the joke from the Chuck Norris API.
+//How do I clear the value when people refresh or push the button?
 const getChuckJoke = () => {
+   
   return fetch('https://api.chucknorris.io/jokes/random')
   .then((response) => response.json())
-  .then((data) => console.log(data));
-  .then(jokes => {
-    allJokes.push(...jokes)
-    jokes.map(s => {
-        const li = document.createElement('li')
-        li.innerHTML = s.name 
-        allJokes.appendChild(li)
-    })
+  .then((data) =>{
+   //console.log(data);
+//    var ul = document.getElementById("list");
+//    var li = document.createElement("li");
+//    li.appendChild(document.createTextNode(data.value));
+//    ul.appendChild(li);
+    document.getElementById("noJokes").innerHTML = data.value;
+  } )
+  .catch(error => {
+    
   })
 }
+/*
+var button = document.getElementById("jokeButton");
+button.addEventListener("click",function(){ alert(1);})*/
