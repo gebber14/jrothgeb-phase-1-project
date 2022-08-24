@@ -44,7 +44,7 @@ function myFunction() {
         }
       }
     }
-  }
+   }
 
 //This is to retrieve the joke from the Chuck Norris API.
 //How do I clear the value when people refresh or push the button?
