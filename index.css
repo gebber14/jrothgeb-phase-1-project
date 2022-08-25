@@ -11,9 +11,9 @@ div {
   height: 200px;
   background-size: cover;
   background-color: gray;
-  text-align: justify;
+  text-align: center;
   position: relative;
-  margin: 40px 0 0 0;
+  margin: 40px 40px 40px 40px;
   border-radius: 12px;
 }
 /* Dropdown Button */
@@ -43,7 +43,7 @@ div {
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
     z-index: 1;
   }
   
@@ -60,7 +60,8 @@ div {
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
-h1 {
+
+  h1 {
   font-family: 'Kaushan Script', cursive;
   text-align: center;
   font-size: 75px;

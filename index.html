@@ -13,17 +13,17 @@
     <!--change margins on this so "Chuck Norris" is on one line<! -->
     <h1>The Ultimate Chuck Norris Joke Generator</h1>
     <img alt="Chuck Norris cover photo" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Chuck_Norris_%281976%29.jpg">
+   
+    <!--Why is the dropdown the same as the button?-->
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">How are you feeling today?</button>
+        <button id ="dropdownButton" onclick="myFunction()" class="dropbtn">How are you feeling today?</button>
         <div id="myDropdown" class="dropdown-content">
           <a href="#">Happy</a>
           <a href="#">Kinda blah</a>
           <a href="#">A little persnickety</a>
         </div>
       </div>
-    <h2>Hi! I'm Jason, and I'm training to be a software developer.  Say hello!</h2>
-    <input type="email" placeholder="Your email">
-    <input type="submit">
+    
     
     <button
         id = "jokeButton" onclick="getChuckJoke()">Click me for Joke
@@ -32,9 +32,17 @@
 
    </ul> -->
    <div id="noJokes"></div>
+
+   <h2>Hi! I'm Jason, and I'm training to be a software developer.  
+        This website is an ongoing project for me, so feel free to help!  
+        Start by submitting a new Chuck Norris here!</h2>
+    <input type="text" placeholder="Type joke here">
+    <input type="submit">
+
+
     <h3>Please note:  I am aware that my website is a bit off stylistically.  
       This is my first website, I'm learning, so give me some grace:)</h3>
-    <div>
+    <div class="feedbackDiv">
       <form action="/action_page.php">
       <p>Please tell me your thoughts on this website:</p>
         
