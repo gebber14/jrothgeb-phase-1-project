@@ -10,10 +10,10 @@ body {
 div {
   height: 200px;
   background-size: cover;
-  background-color: gray;
+  background-color: transparent;
   text-align: center;
   position: relative;
-  margin: 40px 40px 40px 40px;
+  margin: 10px 40px 40px 40px;
   border-radius: 12px;
 }
 /* Dropdown Button */
@@ -61,6 +61,7 @@ div {
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
 
+  
   h1 {
   font-family: 'Kaushan Script', cursive;
   text-align: center;
