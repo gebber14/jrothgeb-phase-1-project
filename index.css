@@ -16,6 +16,11 @@ div {
   margin: 10px 40px 40px 40px;
   border-radius: 12px;
 }
+button {
+    margin: 70px;
+    height: 50px;
+    max-width: 70px;
+}
 /* Dropdown Button */
 .dropbtn {
     background-color: #3498DB;
@@ -79,16 +84,19 @@ h3 {
     color: black;
     margin: 60px 0 0 0;
 }
-
+p {
+    margin: 0 0 0 0;
+}
 img {
     border: 5px;
-    border-radius: 1000px;
-    margin: 100px;
+    border-radius: 100px;
+    margin: 50px 0 10px 0;
 }
 .jokeContainer {
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 3px 3px 10px gold;
+    margin: 30px 0 30px 0;
 }
 .radio:hover:hover span {
     display: none;

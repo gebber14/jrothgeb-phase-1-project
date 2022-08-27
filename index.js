@@ -1,3 +1,13 @@
+const introSign = () => {
+    const isOkWithJoke = confirm("Some of these jokes may use some strong language.  Are you ok with that?");
+    if (isOkWithJoke) {
+        main();
+    } else {
+        const noToJokes = document.getElementById("noJokes");
+        noToJokes.innerHTML = "I understand.  Thanks for visiting!";
+    }
+}
+
 //const { mainModule } = require("process");
 const allJokes = [];
 //const { link } = require("fs");
@@ -16,15 +26,7 @@ function ShowHideDiv() {
     chkYes.style.display = dvtext.checked = "Thanks!";
 }
 
-const introSign = () => {
-    const isOkWithJoke = confirm("Some of these jokes may use some strong language.  Are you ok with that?");
-    if (isOkWithJoke) {
-        main();
-    } else {
-        const noToJokes = document.getElementById("noJokes");
-        noToJokes.innerHTML = "I understand.  Thanks for visiting!";
-    }
-}
+
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
