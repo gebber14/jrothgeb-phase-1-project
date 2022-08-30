@@ -11,7 +11,8 @@ const introSign = () => {
     const introText = "Some of these jokes may use some strong language.  Are you ok with that?"
     //const isOkWithJoke = confirm();
     if (confirm(introText)=== true) {
-        main();
+        const yesToJokes = document.getElementById("noJokes");
+        yesToJokes.innerHTML = "Click the button, and your joke will show up here!";
         //ShowHideDiv();
     } else {
         const noToJokes = document.getElementById("noJokes");
@@ -20,14 +21,11 @@ const introSign = () => {
 }
 introSign();
 
-//const { mainModule } = require("process");
-const allJokes = [];
-//const { link } = require("fs");
+const allJokes = []
 const h3 = document.createElement('h3');
 const h2 = document.createElement("h2");
-//h2.textContent = "This content added by JavaScript";
-/*document.querySelector("body").appendChild(h2);
-*/
+
+
 function ShowHideDiv() {
     if(document.getElementById("masterpiece").checked) {
         dispatchEvent.display("Booo!")
@@ -39,26 +37,26 @@ function ShowHideDiv() {
 }
 
 
-
+//DROPDOWN BUTTON CODE
 //When the user clicks on the button,
 //toggle between hiding and showing the dropdown content 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+//   }
   
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-   }
+//   // Close the dropdown menu if the user clicks outside of it
+//   window.onclick = function(event) {
+//     if (!event.target.matches('.dropbtn')) {
+//       var dropdowns = document.getElementsByClassName("dropdown-content");
+//       var i;
+//       for (i = 0; i < dropdowns.length; i++) {
+//         var openDropdown = dropdowns[i];
+//         if (openDropdown.classList.contains('show')) {
+//           openDropdown.classList.remove('show');
+//         }
+//       }
+//     }
+//    }
 
 //This is to retrieve the joke from the Chuck Norris API.
 //How do I clear the value when people refresh or push the button?
@@ -79,5 +77,5 @@ const getChuckJoke = () => {
   })
 }
 
-//var button = document.getElementById("jokeButton");
-//button.addEventListener("click",function(){ alert(1);})
+// var button = document.getElementById("jokeButton");
+// button.addEventListener("click",function(){ alert(1);})
