@@ -8,16 +8,17 @@
 
 //This the code to add the initial pop up
 const introSign = () => {
-    const isOkWithJoke = confirm("Some of these jokes may use some strong language.  Are you ok with that?");
-    if (isOkWithJoke) {
-        //main();
-        ShowHideDiv();
+    const introText = "Some of these jokes may use some strong language.  Are you ok with that?"
+    //const isOkWithJoke = confirm();
+    if (confirm(introText)=== true) {
+        main();
+        //ShowHideDiv();
     } else {
         const noToJokes = document.getElementById("noJokes");
         noToJokes.innerHTML = "I understand.  Thanks for visiting!";
     }
 }
-//introSign();
+introSign();
 
 //const { mainModule } = require("process");
 const allJokes = [];
@@ -39,8 +40,8 @@ function ShowHideDiv() {
 
 
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+//When the user clicks on the button,
+//toggle between hiding and showing the dropdown content 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
