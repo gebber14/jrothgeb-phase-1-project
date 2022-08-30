@@ -1,19 +1,30 @@
+// To Do list:  
+// 1.  Need to add two more event listeners.  Sara suggested I use a change event listener for my radio buttons, 
+// and a "submit" event listener (imput form event handler).
+// 2. Your project must implement at least one instance of array iteration using available array methods 
+//(map, forEach, filter, etc). 
+//Manipulating your API data in some way should present an opportunity to implement your array iteration.
+
+
+//This the code to add the initial pop up
 const introSign = () => {
     const isOkWithJoke = confirm("Some of these jokes may use some strong language.  Are you ok with that?");
     if (isOkWithJoke) {
-        main();
+        //main();
+        ShowHideDiv();
     } else {
         const noToJokes = document.getElementById("noJokes");
         noToJokes.innerHTML = "I understand.  Thanks for visiting!";
     }
 }
+//introSign();
 
 //const { mainModule } = require("process");
 const allJokes = [];
 //const { link } = require("fs");
 const h3 = document.createElement('h3');
 const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
+//h2.textContent = "This content added by JavaScript";
 /*document.querySelector("body").appendChild(h2);
 */
 function ShowHideDiv() {
@@ -66,6 +77,6 @@ const getChuckJoke = () => {
     
   })
 }
-/*
-var button = document.getElementById("jokeButton");
-button.addEventListener("click",function(){ alert(1);})*/
+
+//var button = document.getElementById("jokeButton");
+//button.addEventListener("click",function(){ alert(1);})
