@@ -44,26 +44,29 @@
 
     <h3>Please note:  I am aware that my website is a bit off stylistically.  
       This is my first website, I'm learning, so give me some grace:)</h3>
+    
     <div class="feedbackDiv">
-      <form action="/action_page.php">
+      <!--<form action="/action_page.php">-->
       <p>Please tell me your thoughts on this website:</p>
         
         <label for="masterpiece">
-          <input type="radio" id="masterpiece" name="webThoughts" value="masterpiece" onclick="ShowHideDiv()"/>
+          <input type="radio" id="masterpiece" name="webThoughts" value="masterpiece"/>
           This is a masterpiece.  Truly the pinnacle of web design.
         </label><br>
         
         <label for="meh">
-          <input type="radio" id="meh" name="webThoughts" value="meh" onclick="ShowHideDiv()"/>
+          <input type="radio" id="meh" name="webThoughts" value="meh"/>
           It's ok, but I get you are learning, so keep at it!
         </label><br>
 
         
         <label for="blah">
-          <input type="radio" id="blah" name="webThoughts" value="blah" onclick="ShowHideDiv()"/>
+          <input type="radio" id="blah" name="webThoughts" value="blah"/>
           This is abhorrent.  I weep for your future.
         </label><br>
     </div>
+    <p> id= "result"</p>
+    
     <script src="index.js"></script>
   </body>
 </html>
