@@ -7,7 +7,7 @@ body {
   background: url("https://t4.ftcdn.net/jpg/04/16/27/09/360_F_416270919_yB6gnLAGkLogS2ObsoECTJ5uRRNp8u4x.jpg");
   background-size: cover;
 }
-div {
+.jokeContainer {
   height: 200px;
   background-size: cover;
   background-color: transparent;
@@ -86,8 +86,11 @@ h3 {
     font-size: 18px;
     margin: 60px 0 0 0;
 }
-p {
-    margin: 0 0 0 0;
+#buttonHeader {
+    margin: 10px 0 10px 0;
+    font-size: large;
+    text-decoration: underline;
+    color: red;
 }
 img {
     border: 5px;
@@ -100,6 +103,9 @@ img {
     text-shadow: 3px 3px 10px gold;
     margin: 30px 0 30px 0;
 }
+
+
+
 .radio:hover:hover span {
     display: none;
   }
@@ -111,3 +117,10 @@ img {
   .radio:hover {
     background-color: green;
   }
+
+  #feedbackResult {
+    margin: 20px 0 10px 0;
+    font-size: large;
+    text-decoration: solid;
+    color: red;
+}
