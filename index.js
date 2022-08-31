@@ -79,3 +79,26 @@ const getChuckJoke = () => {
 
 // var button = document.getElementById("jokeButton");
 // button.addEventListener("click",function(){ alert(1);})
+
+//delete the onclick.
+// Need js to find the button that I want to add the eventlistener.  Create variable, then 
+//const getRadioButtons = document.querySelectorAll("div.feedbackDiv");
+//input[]
+let radioResult = document.querySelector('#result');
+document.body.addEventListener('change',function (e) {
+    let target = e.target;
+    let message;
+    switch (target.id) {
+        case 'masterpiece':
+            message = "Wow, that is quite the compliment!";
+            break;
+        case 'meh':
+            message = "Got it.  I'm going to keep on studying!";
+            break;
+        case 'blah':
+            message = "Ok, kind of mean, but I can take it.";
+            break;
+
+    }
+    radioResult.textContent = message;
+})
