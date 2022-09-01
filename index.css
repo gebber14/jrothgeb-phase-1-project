@@ -119,7 +119,8 @@ img {
   }
 
   #feedbackResult {
-    margin: 20px 0 10px 0;
+    margin: 20px 0 40px 0;
+    padding-bottom: 50%;
     font-size: large;
     text-decoration: solid;
     color: red;
