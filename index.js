@@ -7,19 +7,19 @@
 
 
 //This the code to add the initial pop up
-const introSign = () => {
-    const introText = "Some of these jokes may use some strong language.  Are you ok with that?"
-    //const isOkWithJoke = confirm();
-    if (confirm(introText)=== true) {
-        const yesToJokes = document.getElementById("noJokes");
-        yesToJokes.innerHTML = "Click the button, and your joke will show up here!";
-        //ShowHideDiv();
-    } else {
-        const noToJokes = document.getElementById("noJokes");
-        noToJokes.innerHTML = "I understand.  Thanks for visiting!";
-    }
-}
-introSign();
+// const introSign = () => {
+//     const introText = "Some of these jokes may use some strong language.  Are you ok with that?"
+//     //const isOkWithJoke = confirm();
+//     if (confirm(introText)=== true) {
+//         const yesToJokes = document.getElementById("noJokes");
+//         yesToJokes.innerHTML = "Click the button, and your joke will show up here!";
+//         //ShowHideDiv();
+//     } else {
+//         const noToJokes = document.getElementById("noJokes");
+//         noToJokes.innerHTML = "I understand.  Thanks for visiting!";
+//     }
+// }
+// introSign();
 
 const allJokes = []
 const h3 = document.createElement('h3');
@@ -84,7 +84,7 @@ const getChuckJoke = () => {
 // Need js to find the button that I want to add the eventlistener.  Create variable, then 
 //const getRadioButtons = document.querySelectorAll("div.feedbackDiv");
 //input[]
-let radioResult = document.querySelector('#result');
+let radioResult = document.querySelector('#feedbackResult');
 document.body.addEventListener('change',function (e) {
     let target = e.target;
     let message;
