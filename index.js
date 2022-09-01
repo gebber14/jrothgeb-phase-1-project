@@ -25,7 +25,21 @@ const allJokes = []
 const h3 = document.createElement('h3');
 const h2 = document.createElement("h2");
 
+//This is an event listener to record a user's response when they type a joke into the field.
 
+function logSubmit(event) {
+    log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}`;
+    //Note to self: is this a cancelable event?  Do I need event.preventDefault
+    event.preventDefault();
+}
+
+const form = document.getElementById('jokeForm');
+const log = document.getElementById('newJoke');
+form.addEventListener('submit', logSubmit);
+
+
+
+//Below is the code for the radio buttons, and what message is displayed when each button is clicked.
 function ShowHideDiv() {
     if(document.getElementById("masterpiece").checked) {
         dispatchEvent.display("Booo!")
@@ -37,29 +51,8 @@ function ShowHideDiv() {
 }
 
 
-//DROPDOWN BUTTON CODE
-//When the user clicks on the button,
-//toggle between hiding and showing the dropdown content 
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-//   }
-  
-//   // Close the dropdown menu if the user clicks outside of it
-//   window.onclick = function(event) {
-//     if (!event.target.matches('.dropbtn')) {
-//       var dropdowns = document.getElementsByClassName("dropdown-content");
-//       var i;
-//       for (i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//         }
-//       }
-//     }
-//    }
 
 //This is to retrieve the joke from the Chuck Norris API.
-//How do I clear the value when people refresh or push the button?
 const getChuckJoke = () => {
    
   return fetch('https://api.chucknorris.io/jokes/random')
@@ -102,3 +95,24 @@ document.body.addEventListener('change',function (e) {
     }
     radioResult.textContent = message;
 })
+
+//DROPDOWN BUTTON CODE  Note:  this functionality will be added later.
+//When the user clicks on the button,
+//toggle between hiding and showing the dropdown content 
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+//   }
+  
+//   // Close the dropdown menu if the user clicks outside of it
+//   window.onclick = function(event) {
+//     if (!event.target.matches('.dropbtn')) {
+//       var dropdowns = document.getElementsByClassName("dropdown-content");
+//       var i;
+//       for (i = 0; i < dropdowns.length; i++) {
+//         var openDropdown = dropdowns[i];
+//         if (openDropdown.classList.contains('show')) {
+//           openDropdown.classList.remove('show');
+//         }
+//       }
+//     }
+//    }
