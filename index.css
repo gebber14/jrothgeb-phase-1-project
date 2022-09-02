@@ -16,7 +16,12 @@ body {
   margin: 10px 40px 40px 40px;
   border-radius: 12px;
 }
-button {
+.jokeButton {
+    margin: 70px;
+    height: 50px;
+    /*max-width: 70px;*/
+}
+.userJoke {
     margin: 70px;
     height: 50px;
     /*max-width: 70px;*/

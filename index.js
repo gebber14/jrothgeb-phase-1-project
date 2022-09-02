@@ -1,6 +1,5 @@
 // To Do list:  
-// 1.  Need to add two more event listeners.  Sara suggested I use a change event listener for my radio buttons, 
-// and a "submit" event listener (imput form event handler).
+
 // 2. Your project must implement at least one instance of array iteration using available array methods 
 //(map, forEach, filter, etc). 
 //Manipulating your API data in some way should present an opportunity to implement your array iteration.
@@ -21,16 +20,56 @@
 // }
 // introSign();
 
-const allJokes = []
-const h3 = document.createElement('h3');
-const h2 = document.createElement("h2");
+
+//Adding a DOM content loaded, my first event listener
+window.addEventListener('DOMContentLoaded', (e) => {
+    console.log('DOM is fully loaded and parsed');
+});
+
+const allChuckJokeArray = [];
+//This is to retrieve the joke from the Chuck Norris API.
+const getChuckJoke = () => {
+   
+  return fetch('https://api.chucknorris.io/jokes/random')
+  .then((response) => response.json())
+  .then((data) =>{
+   //console.log(data);
+//Note: I am leaving this commented-out code in as a future idea to 
+//  list multiple jokes at once.  For now, I just want to list the one.
+   //    var ul = document.getElementById("list");
+//    var li = document.createElement("li");
+//    li.appendChild(document.createTextNode(data.value));
+//    ul.appendChild(li);
+    document.getElementById("noJokes").innerHTML = data.value;
+    allChuckJokeArray.push(data.value);
+    console.log(allChuckJokeArray);
+  } )
+  .catch(error => {
+    
+  })
+  
+}
 
 //This is an event listener to record a user's response when they type a joke into the field.
+//This code also takes the suggestions for jokes, adds them to an array, 
+//and then uses array.from to return the most recent entry.
+//THIS IS THE PART I AM STRUGGLING WITH!!!!!!
+const jokeSuggestionArray = ["test"];
 
 function logSubmit(event) {
-    log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}`;
-    //Note to self: is this a cancelable event?  Do I need event.preventDefault
+    log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}.  Your submitted joke was`;
+    
+    function submitForm() {
+        let frm = document.getElementById("userJoke");
+        jokeSuggestionArray.push(logSubmit);
+        console.log(jokeSuggestionArray);
+    }
+    submitForm();
     event.preventDefault();
+    const lastJokeIndex = jokeSuggestionArray.length;
+    console.log(lastJokeIndex);
+    const lastJoke = jokeSuggestionArray[lastJokeIndex];
+    console.log(lastJoke);
 }
 
 const form = document.getElementById('jokeForm');
@@ -39,44 +78,8 @@ form.addEventListener('submit', logSubmit);
 
 
 
-//Below is the code for the radio buttons, and what message is displayed when each button is clicked.
-function ShowHideDiv() {
-    if(document.getElementById("masterpiece").checked) {
-        dispatchEvent.display("Booo!")
-    }
-    var dvtext = document.getElementById("meh");
-    var dvtext = document.getElementById("blah");
-    dvtext.style.display = chkYes.checked = "Dont pick me!" ; "Pick me!";
-    chkYes.style.display = dvtext.checked = "Thanks!";
-}
 
 
-
-//This is to retrieve the joke from the Chuck Norris API.
-const getChuckJoke = () => {
-   
-  return fetch('https://api.chucknorris.io/jokes/random')
-  .then((response) => response.json())
-  .then((data) =>{
-   //console.log(data);
-//    var ul = document.getElementById("list");
-//    var li = document.createElement("li");
-//    li.appendChild(document.createTextNode(data.value));
-//    ul.appendChild(li);
-    document.getElementById("noJokes").innerHTML = data.value;
-  } )
-  .catch(error => {
-    
-  })
-}
-
-// var button = document.getElementById("jokeButton");
-// button.addEventListener("click",function(){ alert(1);})
-
-//delete the onclick.
-// Need js to find the button that I want to add the eventlistener.  Create variable, then 
-//const getRadioButtons = document.querySelectorAll("div.feedbackDiv");
-//input[]
 let radioResult = document.querySelector('#feedbackResult');
 document.body.addEventListener('change',function (e) {
     let target = e.target;
@@ -95,6 +98,24 @@ document.body.addEventListener('change',function (e) {
     }
     radioResult.textContent = message;
 })
+
+
+
+
+//Below is code for the radio buttons, and what message is displayed when each button is clicked.
+//This functionality will be added later.
+// function ShowHideDiv() {
+//     if(document.getElementById("masterpiece").checked) {
+//         dispatchEvent.display("Booo!")
+//     }
+//     const dvtext = document.getElementById("meh");
+//     const dvtext = document.getElementById("blah");
+//     dvtext.style.display = chkYes.checked = "Dont pick me!" ; "Pick me!";
+//     chkYes.style.display = dvtext.checked = "Thanks!";
+// }
+
+
+
 
 //DROPDOWN BUTTON CODE  Note:  this functionality will be added later.
 //When the user clicks on the button,
