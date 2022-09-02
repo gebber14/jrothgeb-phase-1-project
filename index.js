@@ -53,32 +53,34 @@ const getChuckJoke = () => {
 //This is an event listener to record a user's response when they type a joke into the field.
 //This code also takes the suggestions for jokes, adds them to an array, 
 //and then uses array.from to return the most recent entry.
-//THIS IS THE PART I AM STRUGGLING WITH!!!!!!
-const jokeSuggestionArray = ["test"];
+//For submitting a new joke:
 
-function logSubmit(event) {
-    log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}.  Your submitted joke was`;
-    
-    function submitForm() {
-        let frm = document.getElementById("userJoke");
-        jokeSuggestionArray.push(logSubmit);
-        console.log(jokeSuggestionArray);
-    }
-    submitForm();
-    event.preventDefault();
-    const lastJokeIndex = jokeSuggestionArray.length;
-    console.log(lastJokeIndex);
-    const lastJoke = jokeSuggestionArray[lastJokeIndex];
-    console.log(lastJoke);
-}
+let jokeSuggestionArray = ["test"];
 
 const form = document.getElementById('jokeForm');
 const log = document.getElementById('newJoke');
-form.addEventListener('submit', logSubmit);
+const jokeField= document.getElementById("jokeInput");
+
+function logSubmit(event) {
+event.preventDefault();
+
+log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}.  Your submitted joke was: ${jokeField.value}`;
+
+jokeSuggestionArray.push(jokeField.value);
+console.log(jokeSuggestionArray);
+
+const lastJokeIndex = jokeSuggestionArray.length - 1;
+console.log(lastJokeIndex);
+const lastJoke = jokeSuggestionArray[lastJokeIndex];
+console.log(lastJoke);
+}
+
+form.addEventListener('submit', (event)=> {
+logSubmit(event)
+});
 
 
-
-
+//This is the code for the radion buttons to record a response when each button is clicked.
 
 let radioResult = document.querySelector('#feedbackResult');
 document.body.addEventListener('change',function (e) {
