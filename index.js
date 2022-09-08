@@ -76,7 +76,7 @@ if(jokeSuggestionArray.length == 0){
     previousJokes.textContent =" No previous joke"
 }else{
    const jokeList =  jokeSuggestionArray.map((joke)=>{
-        return `<h1>${joke}</h1>`
+        return `<h4>${joke}</h4>`
     }).join()
 
     previousJokes.innerHTML = jokeList
