@@ -36,8 +36,8 @@ const getChuckJoke = () => {
    //console.log(data);
 //Note: I am leaving this commented-out code in as a future idea to 
 //  list multiple jokes at once.  For now, I just want to list the one.
-   //    var ul = document.getElementById("list");
-//    var li = document.createElement("li");
+   //    const ul = document.getElementById("list");
+//    const li = document.createElement("li");
 //    li.appendChild(document.createTextNode(data.value));
 //    ul.appendChild(li);
     document.getElementById("noJokes").innerHTML = data.value;
@@ -55,29 +55,71 @@ const getChuckJoke = () => {
 //and then uses array.from to return the most recent entry.
 //For submitting a new joke:
 
-let jokeSuggestionArray = ["test"];
+let jokeSuggestionArray = [];
 
 const form = document.getElementById('jokeForm');
 const log = document.getElementById('newJoke');
 const jokeField= document.getElementById("jokeInput");
+const previousJokes = document.querySelector('.previous-joke')
+
+console.log(previousJokes);
 
 function logSubmit(event) {
-event.preventDefault();
+    event.preventDefault();
+    
+    log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}.  Your submitted most recent submitted joke was: ${jokeField.value}`;
+    
+    jokeSuggestionArray.push(jokeField.value);
+    console.log(jokeSuggestionArray);
 
-log.textContent = `Joke submitted!  Time stamp: ${event.timeStamp}.  Your submitted joke was: ${jokeField.value}`;
+if(jokeSuggestionArray.length == 0){
+    previousJokes.textContent =" No previous joke"
+}else{
+   const jokeList =  jokeSuggestionArray.map((joke)=>{
+        return `<h1>${joke}</h1>`
+    }).join()
 
-jokeSuggestionArray.push(jokeField.value);
-console.log(jokeSuggestionArray);
-
-const lastJokeIndex = jokeSuggestionArray.length - 1;
-console.log(lastJokeIndex);
-const lastJoke = jokeSuggestionArray[lastJokeIndex];
-console.log(lastJoke);
+    previousJokes.innerHTML = jokeList
 }
+// const lastJokeIndex = jokeSuggestionArray.length - 1;
+// console.log(lastJokeIndex);
+// const lastJoke = jokeSuggestionArray[lastJokeIndex];
+// console.log(lastJoke);
+}
+
+
+///WHY CANT I PRINT OUT THE LIST OF THE ELEMENTS OF THE ARRAY USING ARRAY ITERATION?
+//top testy2
+// index = 0;
+// jokeSuggestionArray.forEach(makeListFunction);
+// function makeListFunction() {
+//     const ul = document.getElementById("listOfUserJokes");
+//     const li = document.createElement("li");
+//     for()
+//     li.appendChild(document.createTextNode(jokeSuggestionArray[0]));
+//     ul.appendChild(li);
+//     console.log(item);
+//     document.getElementById("listOfUserJokes").innerHTML = jokeSuggestionArray.join('<br />');
+// }
+// makeListFunction();
+//bottom testy2
 
 form.addEventListener('submit', (event)=> {
 logSubmit(event)
+
 });
+
+// //top testy1
+// const listOfUserJokes = jokeSuggestionArray.entries();
+// for (let x of listOfUserJokes) {
+//     document.getElementById("listOfUserJokes").innerHTML += x + "<br>";
+// }
+// console.log(listOfUserJokes);
+// //bottom testy1
+
+
+
+
 
 
 //This is the code for the radion buttons to record a response when each button is clicked.
@@ -105,7 +147,7 @@ document.body.addEventListener('change',function (e) {
 
 
 //Below is code for the radio buttons, and what message is displayed when each button is clicked.
-//This functionality will be added later.
+//THIS FUNCTIONALITY WILL BE ADDED LATER?
 // function ShowHideDiv() {
 //     if(document.getElementById("masterpiece").checked) {
 //         dispatchEvent.display("Booo!")
