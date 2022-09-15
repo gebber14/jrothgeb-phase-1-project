@@ -45,7 +45,7 @@ const getChuckJoke = () => {
     console.log(allChuckJokeArray);
   } )
   .catch(error => {
-    
+    console.log("Error retrieving joke")
   })
   
 }
@@ -95,7 +95,6 @@ if(jokeSuggestionArray.length == 0){
 // function makeListFunction() {
 //     const ul = document.getElementById("listOfUserJokes");
 //     const li = document.createElement("li");
-//     for()
 //     li.appendChild(document.createTextNode(jokeSuggestionArray[0]));
 //     ul.appendChild(li);
 //     console.log(item);
